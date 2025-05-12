@@ -22,11 +22,11 @@ interface ChatMessage {
 
 interface ChatProps {
   chatId?: number | null;
-  onNewChatCreated?: (chat: Chat) => void; // Теперь передаем весь объект чата
+  onNewChatCreated?: (chat: Chat) => void;
   onChatChange?: (chatId: number | null) => void;
 }
 
-// определим тип для моделей
+//тип для моделей
 type ModelType = "tinyllama" | "mistral" | "phi3";
 
 export default function Chat({
@@ -53,7 +53,6 @@ export default function Chat({
 
   useEffect(() => {
     if (currentChatId !== null) {
-      // Явная проверка на null
       loadChatMessages(currentChatId);
     } else {
       setMessages([]);
@@ -67,7 +66,7 @@ export default function Chat({
         { withCredentials: true },
       );
 
-      // Форматируем даты сообщений
+      // Форматирование даты сообщений
       const formattedMessages = response.data.map((msg) => ({
         ...msg,
         timestamp: dataFormatter(msg.timestamp),
@@ -133,7 +132,7 @@ export default function Chat({
 
           const botResponse = await axios.post(
             `${LOCAL_API_URL}api/chatlogs/${chatIdToUpdate}/respond`,
-            { message, model: selectedModel }, // Добавляем выбранную модель
+            { message, model: selectedModel },
             { withCredentials: true },
           );
 
@@ -246,7 +245,7 @@ export default function Chat({
         </div>
       </div>
 
-      {/* Поле ввода (остаётся внизу) */}
+      {/* Поле ввода */}
       <div className="flex w-full items-center gap-2 p-4">
         <input
           type="text"

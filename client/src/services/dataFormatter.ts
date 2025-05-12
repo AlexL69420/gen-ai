@@ -19,7 +19,7 @@ export default function dataFormatter(
   return `${day}.${month}.${year}, ${hours}:${minutes} MSK`;
 }
 
-// Новая функция только для даты (без времени)
+// функция только для даты (без времени)
 export function formatDateOnly(isoString: string | Date | undefined): string {
   if (!isoString) return "Дата не указана";
 

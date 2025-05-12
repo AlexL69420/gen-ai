@@ -2,7 +2,8 @@ import { Router } from "express";
 import usersRouter from './users.mjs';
 import chatlogsRouter from './chatlogs.mjs';
 import answerRouter from './answer.mjs';
- 
+
+// роутер для роутеров
 const router = Router();
 
 router.use('/api/users', usersRouter);

@@ -19,10 +19,14 @@ export default function ProfilePage() {
     e.preventDefault();
 
     try {
-      await axios.put(`${LOCAL_API_URL}api/users/change-password`, {
-        oldPassword,
-        newPassword,
-      });
+      await axios.put(
+        `${LOCAL_API_URL}api/users/change-password`,
+        {
+          oldPassword,
+          newPassword,
+        },
+        { withCredentials: true },
+      );
       setError("");
       setSuccess("Пароль успешно изменён");
       setOldPassword("");
@@ -49,7 +53,7 @@ export default function ProfilePage() {
     if (!user) {
       navigate("/auth");
     }
-  }, [user, navigate]); // Зависимости: user и navigate
+  }, [user, navigate]);
 
   // Отображение ошибки
   if (error) {

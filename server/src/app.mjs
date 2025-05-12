@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import pgSession from 'connect-pg-simple';
 import passport from 'passport';
