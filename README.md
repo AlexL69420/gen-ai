@@ -14,24 +14,24 @@
 Чтобы запустить локальную версию:
 - Получить решение из гитхаба (например, с помощью git clone)
 - Открыть папку cient в терминале и ввести:
-   >npm i  /
-npm run dev  /
-кликнуть на появившуюся ссылку
+   - npm i  
+   - npm run dev  
+   - кликнуть на появившуюся ссылку
 - Открыть папку server в терминале и ввести:
-   >npm i  /
-npm start  /
+   - npm i  
+   - npm start  
 - Импортировать базу данных
 Ввести в терминале
   >psql postgresql://postgres:mango@localhost/genai -f "путь_к_файлу_database.sql"
 - Установить Ollama и вввести в терминале:
-  >ollama pull mistral  /
-ollama pull tinyllama  /
-ollama pull phi3
+   - llama pull mistral 
+   - ollama pull tinyllama 
+   - ollama pull phi3
 
 Если после этого не работает, то проблемма, вероятно, лежит в неправильных портах. Нужно удостовериться, что части программы находтся на нужных портах:
-ollama - http://localhost:11434
-client-http://localhost:5173
-server - http://localhost:5000
-database - http://localhost:5432
+   - ollama - http://localhost:11434
+   - client-http://localhost:5173
+   - server - http://localhost:5000
+   - database - http://localhost:5432
 
 После этого веб-приложение должно заработать 
