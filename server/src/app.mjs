@@ -34,7 +34,7 @@ app.use(session(
         maxAge: 60000 * 60 * 168, 
         httpOnly: true,
         secure: false, // Отключаем в development
-        //secure: process.env.NODE_ENV === 'production', // Используйте HTTPS в production
+        //secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax', // Защита от CSRF 
         },
     }
